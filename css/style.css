@@ -82,14 +82,20 @@ td{
     margin: 50px;
     box-shadow: 5px;
 }
-    #projects {
+  #projects {
             margin-top: 20px;
         }
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+            gap: 20px; /* Espace entre les éléments */
+        }
         .project {
-            margin-bottom: 20px;
+            flex: 1 1 300px; /* Largeur minimale de 300px, s'adapte à l'espace */
+            max-width: 300px;
         }
         .project img {
-            width: 300px; /* Taille de la prévisualisation */
+            width: 100%;
             height: auto;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -100,6 +106,7 @@ td{
             font-weight: bold;
             text-decoration: none;
             color: #0078d4;
+            text-align: center;
         }
         .project a:hover {
             text-decoration: underline;
