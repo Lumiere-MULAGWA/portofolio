@@ -82,35 +82,48 @@ td{
     margin: 50px;
     box-shadow: 5px;
 }
-  #projects {
-            margin-top: 20px;
-        }
-        .projects-container {
-            display: flex;
-            flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
-            gap: 20px; /* Espace entre les éléments */
-        }
-        .project {
-            flex: 1 1 300px; /* Largeur minimale de 300px, s'adapte à l'espace */
-            max-width: 300px;
-        }
-        .project img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .project a {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-            text-decoration: none;
-            color: #0078d4;
-            text-align: center;
-        }
-        .project a:hover {
-            text-decoration: underline;
-        }
+/**
+projet
+*/
+
+#projects {
+    margin-top: 20px;
+    flex-direction: row;
+    display: flex;
+    gap: 20px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: flex-start; /* Aligne les éléments à gauche */
+    flex-wrap: wrap; /* Passe à la ligne si nécessaire */
+    gap: 20px; /* Espace entre les éléments */
+}
+
+.project {
+    flex: 0 1 calc(33.33% - 20px); /* Chaque projet occupe un tiers de la largeur */
+    max-width: 300px; /* Largeur maximale */
+    text-align: center; /* Centrer le texte */
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project a {
+    display: flexbox;
+    margin-top: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #0078d4;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
 /* .img{
     border-radius: 25px;
     background-color: rgba(102, 102, 219, 0.315);
