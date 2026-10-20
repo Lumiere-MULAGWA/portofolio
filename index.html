@@ -7,6 +7,12 @@
     <meta name="description" content="Portfolio de lmr lumiere — Développeur Python Full-Stack & passionné d'IA. Découvrez Zamimo, iMarket, Mwepesi English et MasterSIF.">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="apple-touch-icon" href="images/favicon.svg">
+    <meta name="theme-color" content="#020C1B">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="lmr lumiere — Développeur Python Full-Stack & IA">
+    <meta property="og:description" content="Ingénieur logiciel freelance, Microsoft Learn Student Ambassador. Découvrez Zamimo, iMarket, Mwepesi English et MasterSIF.">
+    <meta property="og:image" content="images/profil/studio.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -388,6 +394,8 @@
         .about-image {
             flex-shrink: 0;
             position: relative;
+            width: 330px;
+            margin-top: 20px;
         }
 
         .about-image::before {
@@ -401,14 +409,77 @@
             z-index: 0;
         }
 
-        .about-image img {
+        .about-img-main {
+            display: block;
             width: 320px;
-            height: 320px;
+            height: 400px;
             object-fit: cover;
             border-radius: 20px;
             position: relative;
             z-index: 1;
             border: 1px solid var(--border-light);
+            transition: transform 0.5s ease;
+        }
+
+        .about-img-mini {
+            position: absolute;
+            bottom: -28px;
+            left: -38px;
+            width: 150px;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 16px;
+            z-index: 2;
+            border: 5px solid var(--bg-deep);
+            box-shadow: 0 12px 30px rgba(2, 12, 27, 0.65), 0 0 20px rgba(25, 122, 219, 0.25);
+            cursor: pointer;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .about-img-mini:hover {
+            transform: scale(1.06) rotate(-2deg);
+            box-shadow: 0 16px 38px rgba(2, 12, 27, 0.7), 0 0 30px rgba(25, 122, 219, 0.4);
+        }
+
+        .about-img-hint {
+            position: absolute;
+            bottom: -30px;
+            left: -10px;
+            z-index: 3;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(2, 12, 27, 0.85);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: 100px;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .about-image:hover .about-img-hint {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-snap {
+            display: inline-block;
+            margin-top: 14px;
+            margin-left: 4px;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        .about-snap i {
+            color: var(--accent);
+            margin-right: 6px;
         }
 
         .about-text p {
@@ -704,6 +775,7 @@
             position: relative;
             overflow: hidden;
             background: var(--bg-dark);
+            padding-top: 24px;
         }
 
         .project-image::before {
@@ -787,6 +859,110 @@
 
         .project-link:hover {
             gap: 14px;
+        }
+
+        /* ===== Capture réelle (projet) ===== */
+        .project-shot {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            z-index: 0;
+            transition: transform 0.45s ease;
+        }
+
+        .project-card:hover .project-shot {
+            transform: scale(1.05);
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background: linear-gradient(180deg, rgba(2, 12, 27, 0.25), transparent 40%);
+        }
+
+        /* ===== Timeline parcours ===== */
+        .timeline {
+            position: relative;
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, transparent, rgba(56, 189, 248, 0.5) 12%, rgba(56, 189, 248, 0.5) 88%, transparent);
+        }
+
+        .t-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 30px;
+        }
+
+        .t-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .t-dot {
+            position: absolute;
+            left: 12px;
+            top: 30px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 4px solid var(--bg-deep);
+            box-shadow: 0 0 14px rgba(56, 189, 248, 0.7);
+        }
+
+        .t-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px 30px;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .t-card:hover {
+            transform: translateX(6px);
+            border-color: rgba(56, 189, 248, 0.45);
+            box-shadow: 0 14px 34px rgba(2, 12, 27, 0.55), 0 0 26px rgba(25, 122, 219, 0.15);
+        }
+
+        .t-year {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 12px;
+        }
+
+        .t-card h3 {
+            font-family: var(--font-heading);
+            color: var(--light);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .t-card p {
+            color: var(--muted);
+            font-size: 0.92rem;
         }
 
         /* ===== Contact ===== */
@@ -1102,6 +1278,154 @@
             color: var(--muted);
         }
 
+        /* ===== Barre de progression & retour en haut ===== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0;
+            background: linear-gradient(90deg, var(--accent-secondary), var(--accent), #4f44d3);
+            z-index: 2001;
+            transition: width 0.15s linear;
+            border-radius: 0 2px 2px 0;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 26px;
+            right: 26px;
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: var(--bg-card);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            color: var(--accent);
+            font-size: 1rem;
+            cursor: pointer;
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(14px);
+            transition: all 0.3s ease;
+        }
+
+        .back-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-top:hover {
+            box-shadow: 0 0 22px rgba(25, 122, 219, 0.35);
+            transform: translateY(-3px);
+        }
+
+        /* ===== Badges de crédibilité (hero) ===== */
+        .hero-achiv {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 34px;
+        }
+
+        .achiv-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .achiv-chip i {
+            color: var(--accent);
+        }
+
+        .achiv-chip:hover {
+            color: var(--light);
+            border-color: rgba(56, 189, 248, 0.45);
+        }
+
+        /* ===== Curseur machine à écrire ===== */
+        #typed {
+            border-right: 3px solid var(--accent);
+            padding-right: 4px;
+            animation: caret 1s infinite;
+        }
+
+        @keyframes caret {
+            0%, 100% { border-color: var(--accent); }
+            50% { border-color: transparent; }
+        }
+
+        /* ===== Fausse fenêtre navigateur (projets) ===== */
+        .browser-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0 14px;
+            background: rgba(148, 163, 184, 0.07);
+            border-bottom: 1px solid var(--border);
+            z-index: 1;
+        }
+
+        .browser-bar .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .browser-bar .dot.r { background: #ff5f56; }
+        .browser-bar .dot.y { background: #ffbd2e; }
+        .browser-bar .dot.g { background: #27c93f; }
+
+        .browser-bar .url {
+            flex: 1;
+            margin-left: 8px;
+            background: rgba(2, 12, 27, 0.6);
+            border-radius: 100px;
+            font-size: 0.68rem;
+            color: var(--muted);
+            text-align: center;
+            padding: 3px 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .browser-bar .url i {
+            color: var(--accent);
+            font-size: 0.6rem;
+            margin-right: 5px;
+        }
+
+        /* ===== Accessibilité : mouvement réduit ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+            html { scroll-behavior: auto; }
+        }
+
         /* ===== Responsive ===== */
         @media (max-width: 900px) {
             .about-content {
@@ -1109,9 +1433,19 @@
                 gap: 50px;
                 text-align: left;
             }
-            .about-image img {
+            .about-image {
+                width: 300px;
+                margin-left: 34px;
+            }
+            .about-img-main {
                 width: 280px;
-                height: 280px;
+                height: 350px;
+            }
+            .about-img-mini {
+                width: 122px;
+                height: 154px;
+                left: -18px;
+                bottom: -22px;
             }
             .projects-grid,
             .services-card-grid {
@@ -1169,6 +1503,11 @@
     </style>
 </head>
 <body>
+    <!-- Barre de progression de lecture -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <!-- Bouton retour en haut -->
+    <button class="back-top" id="backTop" aria-label="Retour en haut"><i class="fas fa-chevron-up"></i></button>
+
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
@@ -1183,6 +1522,7 @@
                     <li><a href="#competences" onclick="closeMenu()">Compétences</a></li>
                     <li><a href="#services" onclick="closeMenu()">Services</a></li>
                     <li><a href="#projets" onclick="closeMenu()">Projets</a></li>
+                    <li><a href="#parcours" onclick="closeMenu()">Parcours</a></li>
                     <li><a href="#contact" class="nav-cta" onclick="closeMenu()">Contact</a></li>
                     <li><a href="https://wa.me/243851039067?text=Bonjour%20lmr%20lumiere%2C%20je%20souhaite%20faire%20un%20don." target="_blank" rel="noopener" class="nav-donate" onclick="closeMenu()"><i class="fas fa-heart"></i> Faire un don</a></li>
                 </ul>
@@ -1196,12 +1536,17 @@
         <div class="container">
             <div class="hero-content reveal">
                 <span class="hero-badge"><span class="dot"></span> Disponible pour de nouveaux projets</span>
-                <h1>Développeur <span class="gradient-text">Python Full-Stack</span><br>&amp; Passionné d'IA</h1>
+                <h1>Développeur <span class="gradient-text" id="typed">Python Full-Stack</span><br>&amp; Passionné d'IA</h1>
                 <p>Je crée des solutions innovantes et élégantes en combinant développement backend,
                 applications mobiles, interfaces web et intelligence artificielle.</p>
                 <div class="hero-actions">
                     <a href="#projets" class="btn btn-primary">Voir mes projets <i class="fas fa-arrow-down"></i></a>
                     <a href="#contact" class="btn btn-outline">Me contacter</a>
+                </div>
+                <div class="hero-achiv">
+                    <span class="achiv-chip"><i class="fas fa-graduation-cap"></i> Microsoft Learn Student Ambassador</span>
+                    <span class="achiv-chip"><i class="fas fa-earth-africa"></i> Contributeur majeur · RDC</span>
+                    <span class="achiv-chip"><i class="fas fa-award"></i> Ingénieur logiciel freelance</span>
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
@@ -1209,8 +1554,8 @@
                         <p>Produits en production</p>
                     </div>
                     <div class="stat">
-                        <h3>10<span>+</span></h3>
-                        <p>Technologies maîtrisées</p>
+                        <h3>94<span>+</span></h3>
+                        <p>Dépôts GitHub</p>
                     </div>
                     <div class="stat">
                         <h3>100<span>%</span></h3>
@@ -1230,25 +1575,38 @@
             </div>
             <div class="about-content">
                 <div class="about-text reveal">
-                    <p>Bonjour ! Je suis un développeur passionné, spécialisé en <span class="highlight">Python backend</span>,
-                    avec une expertise dans le développement d'applications <span class="highlight">mobiles</span> et
-                    <span class="highlight">web</span> modernes.</p>
-                    <p>Ma passion pour l'<span class="highlight">intelligence artificielle</span> me pousse à explorer
-                    constamment de nouvelles technologies et à intégrer des solutions d'IA concrètes dans les produits que je construis.</p>
-                    <p>Je cherche toujours des défis techniques stimulants et des projets innovants où je peux appliquer
-                    mes compétences pour créer des solutions efficaces, robustes et élégantes.</p>
+                    <p>Salut, moi c'est <span class="highlight">lmr lumiere</span> (Lumiere Mulagwa) —
+                    <span class="highlight">ingénieur logiciel freelance</span>, développeur
+                    <span class="highlight">Python Full-Stack</span> et passionné d'
+                    <span class="highlight">intelligence artificielle</span>, basé à Lubumbashi en RDC.</p>
+                    <p><span class="highlight">Microsoft Learn Student Ambassador</span>, je contribue activement à la
+                    communauté tech : plus de <span class="highlight">94 dépôts sur GitHub</span> et un badge de
+                    contributeur parmi les plus prolifiques de RDC. Facial recognition, chatbots, systèmes de
+                    messagerie, applications Android avec Kotlin — j'apprends, je construis et je partage au quotidien.</p>
+                    <p>Curieux de tout — de la <span class="highlight">cybersécurité</span> au
+                    <span class="highlight">cloud</span> (Azure, Docker, Linux), en passant par le machine learning
+                    (TensorFlow, PyTorch, OpenCV) et l'écriture technique — j'aime transformer des problèmes réels
+                    en solutions intelligentes et élégantes.</p>
+                    <blockquote style="border-left: 3px solid var(--accent); padding: 8px 0 8px 18px; margin: 22px 0 26px; color: var(--light); font-style: italic;">
+                        « J'apprends. Je construis. Je partage. » — <span style="color: var(--muted);">carpe diem ✨</span>
+                    </blockquote>
                     <div class="about-tags">
                         <span>Python</span>
-                        <span>Django / Flask</span>
-                        <span>React Native</span>
-                        <span>Machine Learning</span>
-                        <span>API REST</span>
-                        <span>Azure / Microsoft</span>
+                        <span>Django / FastAPI</span>
+                        <span>Odoo ERP</span>
+                        <span>Kotlin / Android</span>
+                        <span>TensorFlow / PyTorch</span>
+                        <span>OpenCV · Vision</span>
+                        <span>Docker / Linux</span>
+                        <span>Azure</span>
+                        <span>Open Source</span>
                     </div>
                     <a href="#contact" class="btn btn-primary">Me contacter</a>
                 </div>
                 <div class="about-image reveal">
-                    <img src="images/profil/moi.jpeg" alt="Photo de profil de lmr lumiere">
+                    <img class="about-img-main" id="aboutMain" src="images/profil/studio.png" alt="lmr lumiere — séance studio">
+                    <img class="about-img-mini" id="aboutMini" src="images/profil/nature.png" alt="lmr lumiere — moment nature">
+                    <span class="about-img-hint"><i class="fas fa-repeat"></i> Échanger les photos</span>
                 </div>
             </div>
         </div>
@@ -1269,6 +1627,7 @@
                     <ul class="expertise-list">
                         <li><i class="fas fa-check"></i> APIs REST &amp; GraphQL robustes</li>
                         <li><i class="fas fa-check"></i> Django, Flask &amp; Python avancé</li>
+                        <li><i class="fas fa-check"></i> Personnalisation du ERP Odoo (modules)</li>
                         <li><i class="fas fa-check"></i> Modélisation &amp; optimisation de bases de données</li>
                     </ul>
                 </div>
@@ -1311,6 +1670,7 @@
                     <span class="chip"><i class="fab fa-css3-alt"></i> CSS3</span>
                     <span class="chip"><i class="fas fa-diagram-project"></i> GraphQL</span>
                     <span class="chip"><i class="fas fa-database"></i> PostgreSQL / MySQL</span>
+                    <span class="chip"><i class="fas fa-boxes-stacked"></i> Odoo ERP</span>
                     <span class="chip"><i class="fas fa-brain"></i> TensorFlow</span>
                     <span class="chip"><i class="fas fa-microchip"></i> PyTorch</span>
                     <span class="chip"><i class="fab fa-docker"></i> Docker</span>
@@ -1381,6 +1741,10 @@
             <div class="projects-grid">
                 <div class="project-card reveal">
                     <div class="project-image">
+                        <div class="browser-bar">
+                            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                            <span class="url"><i class="fas fa-lock"></i>zamimoboutique.com</span>
+                        </div>
                         <div class="overlay-icon"><i class="fas fa-bag-shopping"></i></div>
                     </div>
                     <div class="project-content">
@@ -1398,6 +1762,10 @@
 
                 <div class="project-card reveal">
                     <div class="project-image">
+                        <div class="browser-bar">
+                            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                            <span class="url"><i class="fas fa-lock"></i>imarket.mastersif.com</span>
+                        </div>
                         <div class="overlay-icon"><i class="fas fa-store"></i></div>
                     </div>
                     <div class="project-content">
@@ -1416,6 +1784,11 @@
 
                 <div class="project-card reveal">
                     <div class="project-image">
+                        <div class="browser-bar">
+                            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                            <span class="url"><i class="fas fa-lock"></i>mwepesi-english.com</span>
+                        </div>
+                        <img class="project-shot" src="images/projects/mwepesi.png" alt="Aperçu du site mwepesi-english.com" loading="lazy" onerror="this.style.display='none'">
                         <div class="overlay-icon"><i class="fas fa-graduation-cap"></i></div>
                     </div>
                     <div class="project-content">
@@ -1433,6 +1806,11 @@
 
                 <div class="project-card reveal">
                     <div class="project-image">
+                        <div class="browser-bar">
+                            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                            <span class="url"><i class="fas fa-lock"></i>mastersif.com</span>
+                        </div>
+                        <img class="project-shot" src="images/projects/mastersif.png" alt="Aperçu du site mastersif.com" loading="lazy" onerror="this.style.display='none'">
                         <div class="overlay-icon"><i class="fas fa-globe"></i></div>
                     </div>
                     <div class="project-content">
@@ -1445,6 +1823,58 @@
                             <span class="project-tag">Design moderne</span>
                         </div>
                         <a href="https://mastersif.com/" target="_blank" rel="noopener" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Parcours -->
+    <section id="parcours" class="journey">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="section-label">// Parcours</span>
+                <h2>Mon <span>chemin</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="t-item reveal">
+                    <div class="t-dot"></div>
+                    <div class="t-card">
+                        <span class="t-year">2026 · Aujourd'hui</span>
+                        <h3>4 produits en production 🚀</h3>
+                        <p>Zamimo Boutique, iMarket, Mwepesi English Academy et MasterSIF sont en ligne
+                        et utilisés au quotidien — des développeurs et des clients bénéficient de ces
+                        plateformes à chaque instant.</p>
+                    </div>
+                </div>
+                <div class="t-item reveal">
+                    <div class="t-dot"></div>
+                    <div class="t-card">
+                        <span class="t-year">2025</span>
+                        <h3>Freelance &amp; clients RDC</h3>
+                        <p>Ingénieur logiciel indépendant : sites web, logiciels de gestion,
+                        intégrations ERP et formations informatiques pour des entreprises
+                        et des individus en RDC.</p>
+                    </div>
+                </div>
+                <div class="t-item reveal">
+                    <div class="t-dot"></div>
+                    <div class="t-card">
+                        <span class="t-year">2024</span>
+                        <h3>Microsoft Learn Student Ambassador 🎓</h3>
+                        <p>Nommé ambassadeur Microsoft : organisation d'événements, partage de
+                        connaissances (Azure, IA, Python) et accompagnement des étudiants
+                        du hub local.</p>
+                    </div>
+                </div>
+                <div class="t-item reveal">
+                    <div class="t-dot"></div>
+                    <div class="t-card">
+                        <span class="t-year">2023</span>
+                        <h3>Débuts &amp; open source</h3>
+                        <p>Lancement de mon parcours sur GitHub : reconnaissance faciale,
+                        chatbots, messageries, systèmes de gestion — plus de 94 dépôts et
+                        un badge de contributeur majeur de RDC.</p>
                     </div>
                 </div>
             </div>
@@ -1556,6 +1986,7 @@
                         <li><a href="#competences">Compétences</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#projets">Projets</a></li>
+                        <li><a href="#parcours">Parcours</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="https://wa.me/243851039067?text=Bonjour%20lmr%20lumiere%2C%20je%20souhaite%20faire%20un%20don." target="_blank" rel="noopener"><i class="fas fa-heart" style="color:#FDB022;"></i> Faire un don</a></li>
                     </ul>
@@ -1566,24 +1997,41 @@
                     <div class="social-icons">
                         <a href="https://github.com/Lumiere-MULAGWA" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/lmr-lumiere%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-6268a1236/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://t.me/lmr_lumiere" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://twitter.com/lmrlumiere" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
                         <a href="https://www.instagram.com/lmr.lumiere?igsh=MTF4cDc5YzQwZ253dA%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://mvp.microsoft.com/fr-FR/studentambassadors/profile/3e65bba4-79b3-468b-8a6a-607115a2be42" target="_blank" rel="noopener" aria-label="Microsoft MVP"><i class="fab fa-microsoft"></i></a>
+                        <a href="https://mvp.microsoft.com/fr-FR/studentambassadors/profile/3e65bba4-79b3-468b-8a6a-607115a2be42" target="_blank" rel="noopener" aria-label="Microsoft Student Ambassador"><i class="fab fa-microsoft"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="copyright">
-                <p>&copy; 2022-2026 lmr lumiere. Tous droits réservés.</p>
+                <p>&copy; 2022-<span id="year">2026</span> lmr lumiere. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // ===== Header : effet au scroll =====
+        // ===== Header : effet au scroll + progression + retour en haut =====
         const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
+        const progressBar = document.getElementById('scrollProgress');
+        const backTop = document.getElementById('backTop');
+        let ticking = false;
+
+        function onScroll() {
             header.classList.toggle('scrolled', window.scrollY > 40);
+            const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+            progressBar.style.width = Math.min(pct, 100) + '%';
+            backTop.classList.toggle('show', window.scrollY > 600);
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
         }, { passive: true });
+        onScroll();
+
+        backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
         // ===== Menu mobile =====
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1609,6 +2057,44 @@
         }, { threshold: 0.12 });
 
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ===== Machine à écrire (rôles du hero) =====
+        const typedEl = document.getElementById('typed');
+        const roles = ['Python Full-Stack', 'Web & Mobile', 'IA & Machine Learning', 'Freelance & Open Source'];
+        let roleIdx = 0, charIdx = roles[0].length, deleting = true;
+
+        function typeLoop() {
+            const word = roles[roleIdx];
+            charIdx += deleting ? -1 : 1;
+            typedEl.textContent = word.slice(0, charIdx);
+
+            let delay = deleting ? 45 : 95;
+            if (!deleting && charIdx === word.length) { delay = 2200; deleting = true; }
+            else if (deleting && charIdx === 0) { deleting = false; roleIdx = (roleIdx + 1) % roles.length; delay = 500; }
+
+            setTimeout(typeLoop, delay);
+        }
+        typeLoop();
+
+        // ===== Année automatique =====
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // ===== Échange des photos « À propos » (studio ↔ nature) =====
+        const aboutMain = document.getElementById('aboutMain');
+        const aboutMini = document.getElementById('aboutMini');
+
+        if (aboutMain && aboutMini) {
+            document.getElementById('aboutMini').addEventListener('click', () => {
+                const src = aboutMain.src;
+                const alt = aboutMain.alt;
+                aboutMain.src = aboutMini.src;
+                aboutMain.alt = aboutMini.alt;
+                aboutMini.src = src;
+                aboutMini.alt = alt;
+                aboutMain.style.transform = 'scale(0.98)';
+                setTimeout(() => { aboutMain.style.transform = ''; }, 180);
+            });
+        }
 
         // ===== Envoi WhatsApp =====
         const WA_NUMBER = '243851039067';
