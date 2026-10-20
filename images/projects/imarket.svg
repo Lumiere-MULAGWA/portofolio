@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 820" font-family="Poppins, Arial, sans-serif">
+  <defs>
+    <linearGradient id="hero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#4f44d3"/>
+    </linearGradient>
+    <linearGradient id="chart" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#465fff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#465fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="820" fill="#f4fbf0"/>
+  <rect width="1280" height="820" fill="#f8fafc"/>
+
+  <!-- sidebar -->
+  <rect x="0" y="0" width="230" height="820" fill="#0f172a"/>
+  <g font-size="17" fill="#959ea9">
+    <text x="56" y="66" fill="#ffffff" font-size="26" font-weight="700" font-family="Montserrat, Arial, sans-serif">im<tspan fill="#465fff">arket</tspan></text>
+
+    <g font-size="16">
+      <rect x="18" y="108" width="196" height="44" rx="10" fill="#465fff" fill-opacity="0.18"/>
+      <text x="56" y="136" fill="#7592ff" font-weight="600">🏠 Accueil</text>
+      <text x="56" y="190">🛒 Marketplace</text>
+      <text x="56" y="244">💼 Portefeuille</text>
+      <text x="56" y="298">📦 Commandes</text>
+      <text x="56" y="352">📈 Statistiques</text>
+      <text x="56" y="406">⚙️ Paramètres</text>
+    </g>
+
+    <g stroke="#98a2b3" stroke-opacity="0.25">
+      <path d="M18 440 H212"/>
+    </g>
+    <text x="56" y="478" font-size="14">Support 24/7</text>
+    <text x="56" y="524" font-size="14">🌐 FR / EN</text>
+  </g>
+
+  <!-- header -->
+  <rect x="230" y="0" width="1050" height="64" fill="#ffffff"/>
+  <g stroke="#e4e7ec">
+    <path d="M230 63.5 H1280"/>
+  </g>
+  <rect x="260" y="18" width="360" height="30" rx="15" fill="#f2f4f7"/>
+  <text x="278" y="37" fill="#98a2b3" font-size="14">🔍 Rechercher un produit, une boutique…</text>
+  <circle cx="1180" cy="32" r="14" fill="#465fff" fill-opacity="0.12"/>
+  <text x="1180" y="37" text-anchor="middle" fill="#465fff" font-size="13" font-weight="700">3</text>
+  <circle cx="1235" cy="32" r="15" fill="url(#hero)"/>
+  <text x="1235" y="37" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">L</text>
+
+  <!-- band hero -->
+  <rect x="258" y="92" width="994" height="130" rx="18" fill="url(#hero)"/>
+  <text x="288" y="140" fill="#ffffff" font-size="28" font-weight="700" font-family="Montserrat, Arial, sans-serif">Bienvenue sur iMarket 👋</text>
+  <text x="288" y="172" fill="#dbe6ff" font-size="16">La marketplace qui connecte vendeurs et acheteurs en temps réel.</text>
+  <g>
+    <rect x="288" y="186" width="150" height="20" rx="10" fill="#ffffff" fill-opacity="0.18"/>
+    <text x="363" y="200" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600">Explorons →</text>
+  </g>
+
+  <!-- KPI cards -->
+  <g font-family="Montserrat, Arial, sans-serif">
+    <rect x="258" y="248" width="230" height="110" rx="14" fill="#ffffff" stroke="#e4e7ec"/>
+    <text x="282" y="282" fill="#98a2b3" font-size="13">Utilisateurs actifs</text>
+    <text x="282" y="326" fill="#101828" font-size="30" font-weight="800">12,480</text>
+    <text x="282" y="348" fill="#039855" font-size="13" font-weight="600">▲ 8.2% cette semaine</text>
+
+    <rect x="512" y="248" width="230" height="110" rx="14" fill="#ffffff" stroke="#e4e7ec"/>
+    <text x="536" y="282" fill="#98a2b3" font-size="13">Volume d'échanges</text>
+    <text x="536" y="326" fill="#101828" font-size="30" font-weight="800">$42.8K</text>
+    <text x="536" y="348" fill="#039855" font-size="13" font-weight="600">▲ 12.5% aujourd'hui</text>
+
+    <rect x="766" y="248" width="230" height="110" rx="14" fill="#ffffff" stroke="#e4e7ec"/>
+    <text x="790" y="282" fill="#98a2b3" font-size="13">Commandes</text>
+    <text x="790" y="326" fill="#101828" font-size="30" font-weight="800">1,036</text>
+    <text x="790" y="348" fill="#dc6803" font-size="13" font-weight="600">↻ 27 en attente</text>
+
+    <rect x="1020" y="248" width="232" height="110" rx="14" fill="#ffffff" stroke="#e4e7ec"/>
+    <text x="1044" y="282" fill="#98a2b3" font-size="13">Boutiques</text>
+    <text x="1044" y="326" fill="#101828" font-size="30" font-weight="800">312</text>
+    <text x="1044" y="348" fill="#039855" font-size="13" font-weight="600">▲ 5 nouvelles</text>
+
+    <!-- chart -->
+    <rect x="258" y="384" width="560" height="240" rx="14" fill="#ffffff" stroke="#e4e7ec"/>
+    <text x="282" y="418" fill="#101828" font-size="16" font-weight="700">Évolution des ventes</text>
+    <text x="282" y="440" fill="#98a2b3" font-size="12">Temps réel · WebSocket ⚡</text>
+
+    <g stroke="#f2f4f7">
+      <path d="M258 480 H818 M258 520 H818 M258 560 H818 M258 600 H818"/>
+    </g>
+    <path d="M290 545 L360 528 L430 538 L500 505 L570 512 L640 470 L710 480 L780 445 L795 452" fill="none" stroke="#465fff" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M290 545 L360 528 L430 538 L500 505 L570 512 L640 470 L710 480 L780 445 L795 452 L795 604 L290 604 Z" fill="url(#chart)"/>
+    <circle cx="780" cy="445" r="5" fill="#465fff" stroke="#ffffff" stroke-width="2.5"/>
+
+    <!-- orders -->
+    <rect x="842" y="384" width="410" height="240" rx="14" fill="#ffffff" stroke="#e4e7ec"/>
+    <text x="866" y="418" fill="#101828" font-size="16" font-weight="700">Commandes récentes</text>
+    <g font-size="14" fill="#475467">
+      <text x="866" y="458" fill="#101828" font-weight="600">#2041 — Smartphone X</text>
+      <text x="1210" y="458" fill="#039855" font-weight="600" text-anchor="end">Payée</text>
+      <text x="866" y="500" fill="#101828" font-weight="600">#2040 — Casque BT</text>
+      <text x="1210" y="500" fill="#dc6803" font-weight="600" text-anchor="end">En cours</text>
+      <text x="866" y="542" fill="#101828" font-weight="600">#2039 — Tulles satiné</text>
+      <text x="1210" y="542" fill="#039855" font-weight="600" text-anchor="end">Payée</text>
+      <text x="866" y="584" fill="#101828" font-weight="600">#2038 — Décor salon</text>
+      <text x="1210" y="584" fill="#475467" font-weight="600" text-anchor="end">Nouvelle</text>
+    </g>
+  </g>
+
+  <!-- footer strip -->
+  <text x="258" y="725" fill="#98a2b3" font-size="14">⚡ Notifications instantanées · 🌍 Multi-boutiques · 🔐 Paiements sécurisés</text>
+  <text x="258" y="762" fill="#aab2c0" font-size="12">imarket.mastersif.com — visuel d'ambiance (PWA disponible sur mobile 📱)</text>
+</svg>

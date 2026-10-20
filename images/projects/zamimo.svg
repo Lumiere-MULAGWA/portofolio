@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 820" font-family="Montserrat, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07271b"/>
+      <stop offset="55%" stop-color="#0f5132"/>
+      <stop offset="100%" stop-color="#0b3d2c"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f5c04e"/>
+      <stop offset="100%" stop-color="#f7de8c"/>
+    </linearGradient>
+    <linearGradient id="lime" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#27c93f"/>
+      <stop offset="100%" stop-color="#6ceb7f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="820" fill="url(#bg)"/>
+
+  <!-- trame décorative -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1.5">
+    <path d="M0 120 H1280 M0 260 H1280 M0 400 H1280 M0 540 H1280 M0 680 H1280"/>
+    <path d="M160 0 V820 M400 0 V820 M640 0 V820 M880 0 V820 M1120 0 V820"/>
+  </g>
+  <circle cx="1150" cy="130" r="220" fill="#27c93f" fill-opacity="0.08"/>
+  <circle cx="120" cy="720" r="180" fill="#f5c04e" fill-opacity="0.07"/>
+
+  <!-- bandeau promo -->
+  <g>
+    <rect x="70" y="60" width="150" height="44" rx="22" fill="#27c93f"/>
+    <text x="145" y="89" text-anchor="middle" fill="#04120c" font-size="19" font-weight="700">NOUVEAU</text>
+  </g>
+  <text x="240" y="90" fill="#e8f5ee" font-size="20" opacity="0.85">Offres spéciales · Toute la RDC 🇨🇩</text>
+
+  <!-- mot-clé principal -->
+  <text x="70" y="215" fill="#ffffff" font-size="84" font-weight="800" letter-spacing="1">Le meilleur du</text>
+  <text x="70" y="310" fill="url(#lime)" font-size="84" font-weight="800">Congo, chez vous.</text>
+
+  <text x="72" y="378" fill="#bfe3cf" font-size="24">Mode, soins naturels, artisanat &amp; déco — chaque article</text>
+  <text x="72" y="410" fill="#bfe3cf" font-size="24">raconte une histoire, <tspan fill="#ffffff" font-weight="600">notre histoire.</tspan></text>
+
+  <!-- badges produits -->
+  <g font-size="20" font-weight="600">
+    <g><rect x="72" y="452" width="212" height="52" rx="26" fill="#0d3b2a" stroke="#27c93f" stroke-opacity="0.4"/>
+       <text x="178" y="485" text-anchor="middle" fill="#e8f5ee">👗 Mode &amp; tendance</text></g>
+    <g><rect x="300" y="452" width="216" height="52" rx="26" fill="#0d3b2a" stroke="#27c93f" stroke-opacity="0.4"/>
+       <text x="408" y="485" text-anchor="middle" fill="#e8f5ee">🌿 Soins &amp; nature</text></g>
+    <g><rect x="532" y="452" width="186" height="52" rx="26" fill="#0d3b2a" stroke="#27c93f" stroke-opacity="0.4"/>
+       <text x="625" y="485" text-anchor="middle" fill="#e8f5ee">🪘 Artisanat</text></g>
+    <g><rect x="734" y="452" width="186" height="52" rx="26" fill="#0d3b2a" stroke="#27c93f" stroke-opacity="0.4"/>
+       <text x="827" y="485" text-anchor="middle" fill="#e8f5ee">🕯️ Déco maison</text></g>
+  </g>
+
+  <!-- produits phares : cartes -->
+  <g>
+    <rect x="72" y="540" width="240" height="180" rx="20" fill="#0a2f21" stroke="#ffffff" stroke-opacity="0.08"/>
+    <rect x="92" y="562" width="200" height="88" rx="12" fill="#155c3f"/>
+    <text x="192" y="616" text-anchor="middle" font-size="44">🧺</text>
+    <text x="192" y="680" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="600">Panier artisanal</text>
+    <text x="192" y="706" text-anchor="middle" fill="#f5c04e" font-size="20" font-weight="700">35 $</text>
+
+    <rect x="332" y="540" width="240" height="180" rx="20" fill="#0a2f21" stroke="#ffffff" stroke-opacity="0.08"/>
+    <rect x="352" y="562" width="200" height="88" rx="12" fill="#155c3f"/>
+    <text x="452" y="616" text-anchor="middle" font-size="44">🧴</text>
+    <text x="452" y="680" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="600">Beurre de karité</text>
+    <text x="452" y="706" text-anchor="middle" fill="#f5c04e" font-size="20" font-weight="700">12 $</text>
+
+    <rect x="592" y="540" width="240" height="180" rx="20" fill="#0a2f21" stroke="#ffffff" stroke-opacity="0.08"/>
+    <rect x="612" y="562" width="200" height="88" rx="12" fill="#155c3f"/>
+    <text x="712" y="616" text-anchor="middle" font-size="44">👗</text>
+    <text x="712" y="680" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="600">Robe wax</text>
+    <text x="712" y="706" text-anchor="middle" fill="#f5c04e" font-size="20" font-weight="700">50 $</text>
+  </g>
+
+  <!-- bloc marque à droite -->
+  <g>
+    <rect x="905" y="540" width="305" height="180" rx="20" fill="#062018" stroke="#f5c04e" stroke-opacity="0.25"/>
+    <text x="1057" y="612" text-anchor="middle" fill="#ffffff" font-size="42" font-weight="800" letter-spacing="2">ZAMIMO</text>
+    <text x="1057" y="644" text-anchor="middle" fill="url(#gold)" font-size="19" font-weight="700" letter-spacing="6">BOUTIQUE</text>
+    <text x="1057" y="680" text-anchor="middle" fill="#9fc8ae" font-size="16">26 provinces · 1 marketplace</text>
+  </g>
+
+  <!-- pied -->
+  <text x="70" y="775" fill="#7fae93" font-size="18">zamimoboutique.com — visuel graphique (le site est en ligne 🎉)</text>
+</svg>
